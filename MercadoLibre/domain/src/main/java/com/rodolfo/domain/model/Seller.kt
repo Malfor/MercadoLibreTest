@@ -1,11 +1,15 @@
 package com.rodolfo.domain.model
 
-data class Seller(val id: Double, val shop: Shop) {
+import com.rodolfo.domain.exception.WrongFieldException
+import com.rodolfo.domain.utils.EXCEPTION_MESSAGE_SHOP
+
+data class Seller(val id: Double, val shop: Shop?) {
     init {
-        validationField(id, shop)
+        validationField(shop)
     }
 
-    private fun validationField(id: Double, shop: Shop) {
-
+    private fun validationField(shop: Shop?) {
+        if (shop == null)
+            throw WrongFieldException(EXCEPTION_MESSAGE_SHOP)
     }
 }
