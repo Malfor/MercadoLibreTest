@@ -25,6 +25,7 @@ class SearchFragment : Fragment() {
     ): View? {
         binding = FragmentSearchBinding.inflate(inflater, container, false)
         addSubscribed()
+        setOnClickListener()
         return binding.root
     }
 
@@ -35,8 +36,8 @@ class SearchFragment : Fragment() {
 
     private fun onGetProduct(result: List<Product>?) {
         result?.let {list ->
-
-        }
+            binding.searchEmptyImageView.visibility = View.GONE
+        } ?: run { binding.searchEmptyImageView.visibility = View.VISIBLE }
     }
 
     private fun onIsLoading(result: Boolean) {
@@ -46,5 +47,13 @@ class SearchFragment : Fragment() {
             else
                 progress.visibility = View.GONE
         }
+    }
+
+    private fun setOnClickListener() {
+        binding.searchTextInputLayout.setEndIconOnClickListener { searchProduct() }
+    }
+
+    private fun searchProduct() {
+        binding.searchTextInputEditText.text?.let { viewModel.getProducts(it.toString().trim()) }
     }
 }
