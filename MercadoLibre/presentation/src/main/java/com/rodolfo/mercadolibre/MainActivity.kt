@@ -1,4 +1,3 @@
-
 package com.rodolfo.mercadolibre
 
 import androidx.appcompat.app.AppCompatActivity
