@@ -36,7 +36,10 @@ class SearchFragment : Fragment() {
 
     private fun onGetProduct(result: List<Product>?) {
         result?.let {list ->
-            binding.searchEmptyImageView.visibility = View.GONE
+            if (list.isEmpty())
+                binding.searchEmptyImageView.visibility = View.VISIBLE
+            else
+                binding.searchEmptyImageView.visibility = View.GONE
         } ?: run { binding.searchEmptyImageView.visibility = View.VISIBLE }
     }
 
