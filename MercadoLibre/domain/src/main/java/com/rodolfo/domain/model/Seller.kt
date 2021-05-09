@@ -3,7 +3,7 @@ package com.rodolfo.domain.model
 import com.rodolfo.domain.exception.WrongFieldException
 import com.rodolfo.domain.utils.EXCEPTION_MESSAGE_SHOP
 
-data class Seller(val id: Double, val shop: Shop?) {
+data class Seller(val id: Int, val shop: Shop?) {
     init {
         validationField(shop)
     }
