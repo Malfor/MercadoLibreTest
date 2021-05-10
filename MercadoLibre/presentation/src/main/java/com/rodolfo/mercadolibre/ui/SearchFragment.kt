@@ -11,8 +11,10 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.rodolfo.domain.model.Product
+import com.rodolfo.domain.model.WrapResponse
 import com.rodolfo.mercadolibre.adapter.ProductAdapter
 import com.rodolfo.mercadolibre.databinding.FragmentSearchBinding
+import com.rodolfo.mercadolibre.ui.dialog.AlertDialogFragment
 import com.rodolfo.mercadolibre.viewmodel.ProductViewModel
 import com.rodolfo.mercadolibre.viewmodel.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -48,11 +50,11 @@ class SearchFragment : Fragment() {
 
     private fun addSubscribed() {
         viewModel.onIsLoading.observe(viewLifecycleOwner, Observer<Boolean> { result -> onIsLoading(result) })
-        viewModel.onGetProduct.observe(viewLifecycleOwner, Observer<List<Product>> { result -> onGetProduct(result) })
+        viewModel.onGetProduct.observe(viewLifecycleOwner, Observer<WrapResponse<List<Product>>> { result -> onGetProduct(result) })
     }
 
-    private fun onGetProduct(result: List<Product>?) {
-        result?.let {list ->
+    private fun onGetProduct(result: WrapResponse<List<Product>>) {
+        result.data?.let {list ->
             if (list.isNotEmpty()) {
                 binding.searchEmptyImageView.visibility = View.GONE
                 val productAdapter = ProductAdapter( onClickCard = { sharedViewModel.setItemSelected(it) })
@@ -68,6 +70,8 @@ class SearchFragment : Fragment() {
             binding.searchRecyclerView.visibility = View.GONE
             binding.searchEmptyImageView.visibility = View.VISIBLE
         }
+
+        result.error?.let { AlertDialogFragment(it).show(childFragmentManager, "") }
     }
 
     private fun onIsLoading(result: Boolean) {

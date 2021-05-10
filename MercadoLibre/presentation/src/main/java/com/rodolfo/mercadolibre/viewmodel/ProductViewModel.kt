@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rodolfo.domain.model.Product
+import com.rodolfo.domain.model.WrapResponse
 import com.rodolfo.domain.service.ProductService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -21,8 +22,8 @@ class ProductViewModel @ViewModelInject constructor(
     private val isLoading = MutableLiveData<Boolean>()
     val onIsLoading: LiveData<Boolean> = isLoading
 
-    private val getProducts = MutableLiveData<List<Product>>()
-    val onGetProduct: LiveData<List<Product>> = getProducts
+    private val getProducts = MutableLiveData<WrapResponse<List<Product>>>()
+    val onGetProduct: LiveData<WrapResponse<List<Product>>> = getProducts
 
     fun getProducts(search: String) {
         viewModelScope.launch(coroutineContext) {

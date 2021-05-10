@@ -7,4 +7,6 @@
     <string name="specification_titile">Especificaciones:</string>
     <string name="seller">Vendedor: </string>
     <string name="available_quantity">"Cantidad disonible: "</string>
+    <string name="error">Error</string>
+    <string name="accept">Aceptar</string>
 </resources>
