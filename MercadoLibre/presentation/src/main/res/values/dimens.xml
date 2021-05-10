@@ -7,4 +7,5 @@
     <dimen name="dimen8">8dp</dimen>
     <dimen name="dimen200">200dp</dimen>
     <dimen name="dimen2">2dp</dimen>
+    <dimen name="dimen5">5dp</dimen>
 </resources>

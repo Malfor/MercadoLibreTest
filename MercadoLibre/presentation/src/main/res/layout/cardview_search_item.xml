@@ -3,7 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:elevation="@dimen/dimen5"
+    android:layout_margin="@dimen/dimen5"
+    app:cardCornerRadius="@dimen/dimen8">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/search_item_container"
@@ -23,25 +26,37 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/search_item_title_price_text_view"
-            android:layout_width="@dimen/dimen0"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title_price"
             android:textSize="@dimen/text18"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/search_item_sold_by_text_view"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_item_title_text_view" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/search_item_price_text_view"
-            android:layout_width="@dimen/dimen0"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/text18"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/search_item_sold_by_text_view"
             app:layout_constraintStart_toEndOf="@id/search_item_title_price_text_view"
             app:layout_constraintTop_toBottomOf="@id/search_item_title_text_view"
             tools:text="3899000" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/search_item_sold_by_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text18"
+            android:gravity="start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_item_title_price_text_view"
+            tools:text="Vendido por: Samsung"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
