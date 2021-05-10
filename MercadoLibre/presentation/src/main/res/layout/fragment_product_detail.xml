@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ProductDetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen8">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detail_title_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text25"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Smart Tv Samsung Series 7" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/detail_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen200"
+            android:src="@drawable/ic_paquete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_title_text_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detail_sold_by_title_text_view"
+            android:layout_width="@dimen/dimen0"
+            android:layout_height="wrap_content"
+            android:text="@string/seller"
+            android:textSize="@dimen/text18"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_image_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detail_sold_by_text_view"
+            android:layout_width="@dimen/dimen0"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text18"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/detail_sold_by_title_text_view"
+            app:layout_constraintTop_toBottomOf="@id/detail_image_view"
+            tools:text="EXITO" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detail_price_title_text_view"
+            android:layout_width="@dimen/dimen0"
+            android:layout_height="wrap_content"
+            android:text="@string/title_price"
+            android:textSize="@dimen/text18"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/detail_price_text_view"
+            app:layout_constraintTop_toBottomOf="@id/detail_image_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detail_price_text_view"
+            android:layout_width="@dimen/dimen0"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text18"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_image_view"
+            tools:text="900.000" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detail_quantity_title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/available_quantity"
+            android:textSize="@dimen/text18"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_sold_by_text_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detail_quantity_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text18"
+            app:layout_constraintStart_toEndOf="@id/detail_quantity_title_text_view"
+            app:layout_constraintTop_toBottomOf="@id/detail_sold_by_text_view"
+            tools:text="100" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detail_specification_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen8"
+            android:text="@string/specification_titile"
+            android:textSize="@dimen/text25"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_quantity_title_text_view" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/detail_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_specification_text_view"
+            tools:listitem="@layout/cardview_detail_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

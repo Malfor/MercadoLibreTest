@@ -8,4 +8,5 @@
     <dimen name="dimen200">200dp</dimen>
     <dimen name="dimen2">2dp</dimen>
     <dimen name="dimen5">5dp</dimen>
+    <dimen name="text25">25sp</dimen>
 </resources>
