@@ -21,7 +21,6 @@ class ProductDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentProductDetailBinding
     private lateinit var recyclerView: RecyclerView
-    private var product: Product? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
