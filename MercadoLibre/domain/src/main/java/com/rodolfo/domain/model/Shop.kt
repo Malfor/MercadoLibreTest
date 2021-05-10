@@ -1,3 +1,11 @@
 package com.rodolfo.domain.model
 
-data class Shop(val nickName: String?)
+import com.rodolfo.domain.exception.WrongFieldException
+import com.rodolfo.domain.utils.ERROR_NICK_NAME
+
+data class Shop(val nickName: String?){
+    init {
+        if (nickName.isNullOrEmpty())
+            throw WrongFieldException(ERROR_NICK_NAME)
+    }
+}

@@ -12,6 +12,7 @@ java {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'com.google.dagger:hilt-android:2.32-alpha'
+    implementation 'junit:junit:4.13.2'
     kapt 'com.google.dagger:hilt-android-compiler:2.32-alpha'
 }
 
