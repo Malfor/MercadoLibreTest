@@ -15,7 +15,7 @@ class ProductTest : BaseTest() {
     fun createProductSuccessful() {
         // Arrange - Act
         val product = Product(
-                id = idStrig,
+                id = idString,
                 title = title,
                 seller = Seller(id = idInt, shop = Shop(nickName = nickname)),
                 price = price,
@@ -29,11 +29,11 @@ class ProductTest : BaseTest() {
     @Test
     fun createProductWithoutId() {
         // Arrange
-        idStrig = null
+        idString = null
         // Act
         try {
             Product(
-                id = idStrig,
+                id = idString,
                 title = title,
                 seller = Seller(id = idInt, shop = Shop(nickName = nickname)),
                 price = price,
@@ -49,11 +49,11 @@ class ProductTest : BaseTest() {
     @Test
     fun createProductIdEmpty() {
         // Arrange
-        idStrig = ""
+        idString = ""
         // Act
         try {
             Product(
-                id = idStrig,
+                id = idString,
                 title = title,
                 seller = Seller(id = idInt, shop = Shop(nickName = nickname)),
                 price = price,
@@ -73,7 +73,7 @@ class ProductTest : BaseTest() {
         // Act
         try {
             Product(
-                id = idStrig,
+                id = idString,
                 title = title,
                 seller = Seller(id = idInt, shop = Shop(nickName = nickname)),
                 price = price,
@@ -93,7 +93,7 @@ class ProductTest : BaseTest() {
         // Act
         try {
             Product(
-                id = idStrig,
+                id = idString,
                 title = title,
                 seller = Seller(id = idInt, shop = Shop(nickName = nickname)),
                 price = price,
@@ -113,7 +113,7 @@ class ProductTest : BaseTest() {
         // Act
         try {
             Product(
-                id = idStrig,
+                id = idString,
                 title = title,
                 seller = Seller(id = idInt, shop = Shop(nickName = nickname)),
                 price = price,
@@ -133,7 +133,7 @@ class ProductTest : BaseTest() {
         // Act
         try {
             Product(
-                id = idStrig,
+                id = idString,
                 title = title,
                 seller = Seller(id = idInt, shop = Shop(nickName = nickname)),
                 price = price,

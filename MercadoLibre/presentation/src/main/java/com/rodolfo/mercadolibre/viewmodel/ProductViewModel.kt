@@ -17,7 +17,7 @@ class ProductViewModel @ViewModelInject constructor(
     private val productService: ProductService
 ) : ViewModel(), CoroutineScope {
 
-    override val coroutineContext: CoroutineContext = Dispatchers.IO
+    override var coroutineContext: CoroutineContext = Dispatchers.IO
 
     private val isLoading = MutableLiveData<Boolean>()
     val onIsLoading: LiveData<Boolean> = isLoading

@@ -7,7 +7,7 @@ import com.rodolfo.domain.model.Shop
 
 abstract class BaseTest {
 
-    protected var idStrig: String? = "mock123"
+    protected var idString: String? = "mock123"
     protected var title: String? = "TV Samsung mock"
     protected var idInt: Int? = 101010
     protected var nickname: String? = "Samgun mock"
@@ -20,7 +20,7 @@ abstract class BaseTest {
     private val shop = Shop(nickName = nickname)
     private val seller = Seller(id = idInt, shop = shop)
     protected val product = Product(
-        id = idStrig,
+        id = idString,
         title = title,
         seller = seller,
         price = price,

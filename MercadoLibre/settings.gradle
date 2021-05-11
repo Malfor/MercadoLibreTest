@@ -1,4 +1,4 @@
-include ':infrastructure'
+include ':data'
 include ':domain'
 include ':presentation'
 rootProject.name = "MercadoLibre"
